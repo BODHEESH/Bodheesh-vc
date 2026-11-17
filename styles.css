@@ -981,3 +981,160 @@ svg {
     display: none;
   }
 }
+
+/* ---------- v4: spiders and extra motion ---------- */
+
+.hero,
+.section {
+  position: relative;
+}
+
+.spider-abdomen,
+.spider-head {
+  fill: var(--ink);
+}
+
+.spider-eye {
+  fill: var(--paper);
+}
+
+.hang-thread {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  opacity: 0.55;
+  transform-box: view-box;
+  transform-origin: 35px 0;
+}
+
+.hang-legs path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Hanging spider, top right of the hero */
+.hang {
+  position: absolute;
+  top: 0;
+  right: clamp(1rem, 8vw, 7rem);
+  width: 70px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hang svg {
+  overflow: visible;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hang-body {
+    animation: spider-cycle-body 4.5s infinite;
+  }
+
+  .hang-thread {
+    animation: spider-cycle-thread 4.5s infinite;
+  }
+
+  .hang-legs {
+    transform-box: view-box;
+    transform-origin: 35px 50px;
+    animation: twitch 0.9s ease-in-out infinite alternate;
+  }
+
+  .js .name .ch {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.35em);
+    animation: char-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    animation-delay: calc(var(--i) * 55ms + 0.15s);
+  }
+
+  /* Section rules draw in from the left when a section enters view */
+  .js .section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background: var(--rule);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .js .section.is-in::before {
+    transform: scaleX(1);
+  }
+
+  .js .section.creator::before {
+    display: none;
+  }
+
+  .js .section {
+    border-top: 0;
+  }
+
+  /* Project titles draw an underline on hover */
+  .project h3 {
+    background-image: linear-gradient(var(--signal), var(--signal));
+    background-size: 0 3px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.5s ease;
+  }
+
+  .project:hover h3 {
+    background-size: 100% 3px;
+  }
+}
+
+/* One cycle, 4.5s: drop on the thread, hang, then shoot the web back up and rest */
+@keyframes spider-cycle-body {
+  0% { transform: translateY(0); animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.5); }
+  40% { transform: translateY(56px); animation-timing-function: linear; }
+  55% { transform: translateY(56px); animation-timing-function: cubic-bezier(0.1, 0.8, 0.2, 1); }
+  68% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes spider-cycle-thread {
+  0% { transform: scaleY(1); animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.5); }
+  40% { transform: scaleY(2.4); animation-timing-function: linear; }
+  55% { transform: scaleY(2.4); animation-timing-function: cubic-bezier(0.1, 0.8, 0.2, 1); }
+  68% { transform: scaleY(1); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes twitch {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
+}
+
+@keyframes char-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .hang {
+    width: 48px;
+    right: 1rem;
+  }
+
+  .hang svg {
+    width: 48px;
+    height: auto;
+  }
+}
+
+/* The decorative spider is hidden when the visitor asks for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hang {
+    display: none;
+  }
+}

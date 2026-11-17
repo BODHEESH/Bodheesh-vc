@@ -22,9 +22,11 @@ Open `index.html` in a browser.
 - Sections and items rise in as they scroll into view.
 - Key numbers count up once when visible.
 - A thin reading-progress bar runs along the top edge.
-- Links draw an underline on hover.
+- Links draw an underline on hover. Project titles draw an underline too.
+- The hero name rises letter by letter. Section rules draw in from the left.
+- A spider hangs on a thread in the hero. It drops, hangs, then shoots its web back up and rests, on a 4.5-second cycle.
 
-All motion is switched off when the visitor's system asks for reduced motion. Without JavaScript the full content is still visible.
+All motion is switched off when the visitor's system asks for reduced motion, and the spider is hidden then. Without JavaScript the full content is still visible.
 
 ## Standards built in
 

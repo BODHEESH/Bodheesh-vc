@@ -12,6 +12,30 @@
     year.textContent = new Date().getFullYear();
   }
 
+  // Hero name: each letter rises in, with the accessible name kept on the heading
+  var heroName = document.querySelector("h1.name");
+  if (heroName && !reduceMotion) {
+    heroName.setAttribute("aria-label", "Bodheesh VC");
+    var index = 0;
+    var splitText = function (node) {
+      var fragment = document.createDocumentFragment();
+      node.textContent.split("").forEach(function (ch) {
+        var span = document.createElement("span");
+        span.className = "ch";
+        span.setAttribute("aria-hidden", "true");
+        span.style.setProperty("--i", index++);
+        span.textContent = ch === " " ? " " : ch;
+        fragment.appendChild(span);
+      });
+      node.parentNode.replaceChild(fragment, node);
+    };
+    Array.prototype.slice.call(heroName.childNodes).forEach(function (node) {
+      if (node.nodeType === 3 && node.textContent.trim()) {
+        splitText(node);
+      }
+    });
+  }
+
   // Reading progress along the top edge
   var progress = document.querySelector(".scroll-progress");
   if (progress) {
@@ -31,8 +55,8 @@
     updateProgress();
   }
 
-  // Reveal elements as they enter the viewport, once each
-  var revealItems = document.querySelectorAll(".reveal");
+  // Reveal items (and section rules) as they enter the viewport, once each
+  var revealItems = document.querySelectorAll(".reveal, .section");
   if (reduceMotion || !canObserve) {
     revealItems.forEach(function (el) { el.classList.add("is-in"); });
   } else {
