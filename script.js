@@ -136,27 +136,63 @@
     });
   }
 
-  // Hanging spider fires a web strand when the pointer comes near it
-  var hang = document.querySelector(".hang");
-  if (hang && !reduceMotion) {
-    var lastShot = 0;
-    document.addEventListener("mousemove", function (e) {
-      var now = Date.now();
-      if (now - lastShot < 2600) return;
-      var r = hang.getBoundingClientRect();
-      var dx = e.clientX - (r.left + r.width / 2);
-      var dy = e.clientY - (r.top + r.height * 0.4);
-      if (Math.sqrt(dx * dx + dy * dy) > 160) return;
-      lastShot = now;
-      // The strand fires toward the side the pointer is on
-      hang.style.setProperty("--dir", dx < 0 ? -1 : 1);
-      hang.classList.remove("is-shooting");
-      void hang.offsetWidth; // restart the animation
-      hang.classList.add("is-shooting");
-      setTimeout(function () {
-        hang.classList.remove("is-shooting");
-      }, 1500);
-    }, { passive: true });
+  // Career bike rides along the rail from the first station to the current one
+  var bike = document.getElementById("careerBike");
+  var railWrap = document.querySelector(".rail-wrap");
+  var rail = document.querySelector(".rail");
+  if (bike && railWrap && rail) {
+    var railX = function (x) {
+      return (x / 1000) * rail.getBoundingClientRect().width;
+    };
+    var placeBike = function (x) {
+      bike.style.left = railX(x) + "px";
+    };
+    var parkBike = function () {
+      placeBike(890);
+      bike.classList.add("is-parked");
+    };
+    var rideStarted = false;
+    var rideBike = function () {
+      if (rideStarted || window.innerWidth <= 760) return;
+      rideStarted = true;
+      var startX = 110;
+      var finishX = 890;
+      var duration = 8500;
+      var startTime = null;
+      bike.classList.remove("is-parked");
+      var frame = function (now) {
+        if (startTime === null) startTime = now;
+        var p = Math.min((now - startTime) / duration, 1);
+        // Eased acceleration, then braking into the current station
+        var eased = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        placeBike(startX + (finishX - startX) * eased);
+        if (p < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          parkBike();
+        }
+      };
+      requestAnimationFrame(frame);
+    };
+
+    if (reduceMotion) {
+      parkBike();
+    } else {
+      placeBike(110);
+      if (canObserve) {
+        var rideObserver = new IntersectionObserver(function (entries) {
+          if (entries.some(function (entry) { return entry.isIntersecting; })) {
+            rideBike();
+            rideObserver.disconnect();
+          }
+        }, { threshold: 0.2 });
+        rideObserver.observe(railWrap);
+      }
+    }
+
+    window.addEventListener("resize", function () {
+      if (rideStarted && bike.classList.contains("is-parked")) parkBike();
+    });
   }
 
   // Mobile menu: the Menu button opens every section in one panel

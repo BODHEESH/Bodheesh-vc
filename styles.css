@@ -1069,27 +1069,6 @@ svg {
     transform: scaleX(1);
   }
 
-  /* Web shot: the spider fires a strand toward the pointer, and it sags and falls */
-  .web-shot {
-    transform-box: view-box;
-    transform-origin: 35px 50px;
-    transform: scaleX(var(--dir, 1));
-  }
-
-  .web-strand {
-    fill: none;
-    stroke: var(--ink);
-    stroke-width: 1;
-    stroke-linecap: round;
-    opacity: 0;
-    transform-box: view-box;
-    transform-origin: 35px 50px;
-  }
-
-  .hang.is-shooting .web-strand {
-    animation: web-shoot 1.4s cubic-bezier(0.3, 0, 0.6, 1) forwards;
-  }
-
   .js .section.creator::before {
     display: none;
   }
@@ -1132,13 +1111,6 @@ svg {
 @keyframes twitch {
   from { transform: rotate(-3deg); }
   to { transform: rotate(3deg); }
-}
-
-@keyframes web-shoot {
-  0% { opacity: 0; transform: scaleX(0); }
-  30% { opacity: 1; transform: scaleX(1); }
-  45% { opacity: 1; transform: translateY(0) rotate(0deg); }
-  100% { opacity: 0; transform: translateY(72px) rotate(8deg); }
 }
 
 @keyframes char-rise {
@@ -1255,5 +1227,51 @@ svg {
   .js .site-header.nav-open .site-nav a[aria-current="true"] {
     color: var(--ink);
     border-bottom-color: var(--signal);
+  }
+}
+
+/* ---------- v5: career bike on the rail ---------- */
+
+.rail-wrap {
+  position: relative;
+}
+
+.career-bike {
+  position: absolute;
+  left: 11%;
+  top: 50%;
+  width: clamp(76px, 9vw, 108px);
+  transform: translate(-50%, -100%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.career-bike img {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .career-bike img {
+    animation: bike-bob 0.34s ease-in-out infinite alternate;
+  }
+
+  .career-bike.is-parked img {
+    animation: none;
+  }
+}
+
+@keyframes bike-bob {
+  from { transform: translateY(0) rotate(-0.35deg); }
+  to { transform: translateY(-2px) rotate(0.35deg); }
+}
+
+@media (max-width: 760px) {
+  .career-bike {
+    display: none;
   }
 }
