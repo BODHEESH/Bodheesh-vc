@@ -45,7 +45,7 @@ All motion is switched off when the visitor's system asks for reduced motion, an
 ## Items to confirm
 
 - **Team size**: the site says you lead more than 15 engineers across several teams, from your message. The resume says 6 support plus 5 development members, which is 11. Confirm the number and the team names if you want them shown.
-- **Title**: the site uses "Senior Engineer and Engineering Lead". LinkedIn's current title is "Sr. Engineer - Automation & Application Development". Confirm the wording you want.
+- **Title**: the site uses the confirmed title "Sr. Engineer - Automation & Application Development", with the lead role described in the text.
 - **YouTube subscribers**: not shown. The channel page showed 1.59M, which conflicts with your figure.
 - **npm downloads**: "more than 3,000" from your GitHub README. Your resume says "1000+".
 - **Package count**: the GitHub table lists eight packages, but its achievements say nine.

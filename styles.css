@@ -1270,8 +1270,64 @@ svg {
   to { transform: translateY(-2px) rotate(0.35deg); }
 }
 
+/* Phones: the rail becomes a vertical line, and the bike rides down it */
 @media (max-width: 760px) {
+  .rail-list {
+    position: relative;
+    padding-left: 2.25rem;
+    margin-top: 2rem;
+  }
+
+  .rail-list::before {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    width: 2px;
+    background: var(--ink);
+  }
+
+  .rail-list li {
+    position: relative;
+    display: block;
+    padding: 0 0 1.75rem;
+    border-top: 0;
+  }
+
+  .rail-list li::before {
+    content: "";
+    position: absolute;
+    left: -2.06rem;
+    top: 0.3rem;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+  }
+
+  .rail-list li:last-child::before {
+    background: var(--signal);
+    border-color: var(--signal);
+  }
+
+  .rail-list strong {
+    display: block;
+    font-size: 1.1rem;
+  }
+
+  .rail-list span {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--ink-2);
+  }
+
   .career-bike {
-    display: none;
+    display: block;
+    top: 0;
+    left: 9px;
+    width: 64px;
   }
 }
