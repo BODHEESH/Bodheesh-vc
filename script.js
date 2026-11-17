@@ -135,4 +135,55 @@
       navObserver.observe(sectionsById[id].target);
     });
   }
+
+  // Hanging spider fires a web strand when the pointer comes near it
+  var hang = document.querySelector(".hang");
+  if (hang && !reduceMotion) {
+    var lastShot = 0;
+    document.addEventListener("mousemove", function (e) {
+      var now = Date.now();
+      if (now - lastShot < 2600) return;
+      var r = hang.getBoundingClientRect();
+      var dx = e.clientX - (r.left + r.width / 2);
+      var dy = e.clientY - (r.top + r.height * 0.4);
+      if (Math.sqrt(dx * dx + dy * dy) > 160) return;
+      lastShot = now;
+      // The strand fires toward the side the pointer is on
+      hang.style.setProperty("--dir", dx < 0 ? -1 : 1);
+      hang.classList.remove("is-shooting");
+      void hang.offsetWidth; // restart the animation
+      hang.classList.add("is-shooting");
+      setTimeout(function () {
+        hang.classList.remove("is-shooting");
+      }, 1500);
+    }, { passive: true });
+  }
+
+  // Mobile menu: the Menu button opens every section in one panel
+  var header = document.querySelector(".site-header");
+  var toggle = document.querySelector(".nav-toggle");
+  if (header && toggle) {
+    var toggleLabel = toggle.querySelector(".nav-toggle-label");
+    var setNavOpen = function (open) {
+      header.classList.toggle("nav-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggleLabel.textContent = open ? "Close" : "Menu";
+    };
+    toggle.addEventListener("click", function () {
+      setNavOpen(!header.classList.contains("nav-open"));
+    });
+    // Choosing a section closes the panel
+    header.addEventListener("click", function (e) {
+      if (e.target.closest(".site-nav a")) setNavOpen(false);
+    });
+    document.addEventListener("click", function (e) {
+      if (!header.contains(e.target)) setNavOpen(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && header.classList.contains("nav-open")) {
+        setNavOpen(false);
+        toggle.focus();
+      }
+    });
+  }
 })();
