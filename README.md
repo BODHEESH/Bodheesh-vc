@@ -1,48 +1,59 @@
 # Bodheesh VC · Portfolio
 
-A static personal site: plain HTML, CSS and a small amount of JavaScript. No build step and no dependencies.
+A static personal site: HTML, CSS and a small script. No build step and no dependencies.
 
 ## Files
 
-- `index.html`: all content and structure, including JSON-LD and Open Graph metadata
-- `styles.css`: the design system (palette, type scale, layout, motion, responsive rules)
-- `script.js`: footer year and active-section nav highlighting (the site works without it)
-- `404.html`: custom not-found page
-- `favicon.svg`, `og-image.png`: icon and social preview (1200 x 630)
-- `robots.txt`, `sitemap.xml`: crawler files
+- `index.html`: all content, plus metadata (Open Graph, Twitter cards, JSON-LD Person schema)
+- `styles.css`: the design system (palette, type, layout, motion, print and reduced-motion rules)
+- `script.js`: reveal-on-scroll, reading progress, counting numbers, active-section nav
+- `Images/Bodheesh-800.jpg`, `Images/Bodheesh-480.jpg`: web-sized 4:5 crops of your photo. Your original `Images/Bodheesh.jpeg` is kept unchanged.
+- `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `site.webmanifest`: icons
+- `og-image.png`: 1200 x 630 social preview
+- `404.html`, `robots.txt`, `sitemap.xml`
 
 ## View locally
 
-Open `index.html` in a browser, or run `python -m http.server 8000` in this folder and visit http://localhost:8000.
+Open `index.html` in a browser.
+
+## Motion
+
+- The career rail draws itself on load, and the stations fade in.
+- Sections and items rise in as they scroll into view.
+- Key numbers count up once when visible.
+- A thin reading-progress bar runs along the top edge.
+- Links draw an underline on hover.
+
+All motion is switched off when the visitor's system asks for reduced motion. Without JavaScript the full content is still visible.
+
+## Standards built in
+
+- `lang="en"`, one `h1`, sections with `h2` headings, `time` elements for dates
+- Skip link, labelled navigation, descriptive photo alt text, visible focus outlines
+- Text contrast above 4.5:1, and a keyboard-friendly layout
+- Responsive from phone to desktop, with no horizontal overflow
+- Canonical URL, meta description, Open Graph, sitemap, robots.txt, JSON-LD
 
 ## Before publishing
 
-1. Replace the canonical URL `https://bodheesh.github.io/portfolio/` in `index.html`, `robots.txt`, `sitemap.xml` and the JSON-LD block if the final address differs.
-2. Confirm every item in the list below.
-3. Publish only with your permission (for example, GitHub Pages from a new repo).
-
-## Design notes
-
-- Palette: graphite on a grey engineering-drawing paper, with one verdigris signal colour. No gradients, no glassmorphism.
-- Type: Barlow Condensed for display and labels, Literata for reading text (both from Google Fonts).
-- Signature element: the career rail in the hero, four stations for the career path. It respects `prefers-reduced-motion`.
-- The Bodhi Tech Talks section sits on a dark panel so it reads as a different part of the work from the corporate timeline.
+1. Confirm the final address. The canonical URL, sitemap and social tags use `https://bodheesh.github.io/portfolio/`.
+2. Check the items below.
+3. Publish only with your permission.
 
 ## Items to confirm
 
-- **YouTube subscribers**: the channel page showed "1.59M Followers", a Malayalam tech and DIY description, and 922 videos. Your profile says 30K+. The site shows no subscriber count. Please confirm the correct channel and count.
-- **Ahana role details**: your resume (Software Engineer, MERN) and LinkedIn (Sr. Engineer from Jul 2026) differ. The site uses LinkedIn. The resume also says "6-member support team and 5-member development team"; LinkedIn says "3-4 concurrent projects". The site uses LinkedIn.
-- **Downtime reduction of 20%**: on the resume only, so not on the site. Confirm and it can be added.
-- **npm downloads**: the site says "more than 3,000" (from your GitHub README). Your resume says "1000+". The npm profile page could not be fetched.
-- **Package count**: the GitHub README table lists eight packages, but its achievements say nine. The site lists the eight from the table. If there is a ninth, send its name.
-- **Location**: the site says Bengaluru. Some older pages say Thrissur or Kochi. The site shows Thrissur only for Bodhi Learning.
-- **Phone number**: left off the site on purpose.
-- **Draft copy**: the hero reflection, the About account, the four Leadership principles, the "Bodhi Tech Talks" approach line and the "Beyond" paragraphs are my wording from your profile. Check them.
-- **Missing material**: project screenshots or demo links, two or three YouTube video titles, and a problem statement per project in your words.
+- **Team size**: the site says you lead more than 15 engineers across several teams, from your message. The resume says 6 support plus 5 development members, which is 11. Confirm the number and the team names if you want them shown.
+- **Title**: the site uses "Senior Engineer and Engineering Lead". LinkedIn's current title is "Sr. Engineer - Automation & Application Development". Confirm the wording you want.
+- **YouTube subscribers**: not shown. The channel page showed 1.59M, which conflicts with your figure.
+- **npm downloads**: "more than 3,000" from your GitHub README. Your resume says "1000+".
+- **Package count**: the GitHub table lists eight packages, but its achievements say nine.
+- **Downtime reduction of 20%**: on the resume only, so not on the site.
+- **Draft wording**: the hero line, the About account, the "Leading" principles and the "Beyond" paragraphs are my wording from your profile. Check them in your voice.
+- **Phone number**: left off.
 - **Employer names**: confirm Ahana is happy with its projects being named publicly.
 - **Domain**: confirm the final address.
 
 ## Known limitations
 
-- Checked in headless Chrome at 1440 px and 390 px widths, with no console errors and no horizontal overflow. Google Fonts did not load in the build sandbox, so checks used fallback fonts. Look at the page once in a normal browser.
+- Checked in headless Chrome at 1440 px and 390 px widths. Google Fonts did not load in the build sandbox, so the checks used fallback fonts. Look at the page once in a normal browser.
 - Not deployed.

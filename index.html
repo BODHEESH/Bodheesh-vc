@@ -3,26 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bodheesh VC · Senior Engineer, backend systems and team lead</title>
-  <meta name="description" content="Bodheesh VC is a Senior Engineer at Ahana Systems and Solutions in Bengaluru. He leads software and application-support teams and builds Node.js microservices.">
+  <title>Bodheesh VC · Senior Engineer and engineering lead, Bengaluru</title>
+  <meta name="description" content="Bodheesh VC is a Senior Engineer and engineering lead at Ahana Systems and Solutions in Bengaluru. He leads more than 15 engineers across teams and builds Node.js backend systems, REST APIs and microservices.">
   <meta name="author" content="Bodheesh VC">
   <meta name="theme-color" content="#e7e4dc">
+  <meta name="color-scheme" content="light">
   <link rel="canonical" href="https://bodheesh.github.io/portfolio/">
 
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Bodheesh VC">
-  <meta property="og:title" content="Bodheesh VC · Senior Engineer, backend systems and team lead">
-  <meta property="og:description" content="Backend systems, Node.js microservices and the teams that run them. Bengaluru.">
+  <meta property="og:title" content="Bodheesh VC · Senior Engineer and engineering lead">
+  <meta property="og:description" content="Leading engineering teams and building Node.js backend systems. Bengaluru, India.">
   <meta property="og:url" content="https://bodheesh.github.io/portfolio/">
   <meta property="og:image" content="https://bodheesh.github.io/portfolio/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_IN">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bodheesh VC · Senior Engineer, backend systems and team lead">
-  <meta name="twitter:description" content="Backend systems, Node.js microservices and the teams that run them. Bengaluru.">
+  <meta name="twitter:title" content="Bodheesh VC · Senior Engineer and engineering lead">
+  <meta name="twitter:description" content="Leading engineering teams and building Node.js backend systems. Bengaluru, India.">
   <meta name="twitter:image" content="https://bodheesh.github.io/portfolio/og-image.png">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Literata:opsz,wght@7..72,400;7..72,500&display=swap">
@@ -32,13 +37,20 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://bodheesh.github.io/portfolio/#person",
     "name": "Bodheesh VC",
     "url": "https://bodheesh.github.io/portfolio/",
-    "jobTitle": "Senior Engineer, Automation and Application Development",
+    "image": "https://bodheesh.github.io/portfolio/Images/Bodheesh-800.jpg",
+    "jobTitle": "Senior Engineer and Engineering Lead",
+    "description": "Senior Engineer and engineering lead leading more than 15 engineers across teams, building Node.js backend systems.",
     "worksFor": { "@type": "Organization", "name": "Ahana Systems and Solutions" },
-    "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN" },
-    "email": "bodheeshvc.developer@gmail.com",
-    "knowsAbout": ["Node.js", "Microservices", "Apache Kafka", "Redis", "AWS", "Docker", "React"],
+    "alumniOf": [
+      { "@type": "EducationalOrganization", "name": "Indira Gandhi National Open University" },
+      { "@type": "EducationalOrganization", "name": "Maharajas Technological Institute" }
+    ],
+    "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "addressCountry": "IN" },
+    "email": "mailto:bodheeshvc.developer@gmail.com",
+    "knowsAbout": ["Node.js", "Express.js", "REST APIs", "Microservices", "Apache Kafka", "Redis", "MongoDB", "MySQL", "AWS", "Docker", "React"],
     "sameAs": [
       "https://www.linkedin.com/in/bodheeshvc/",
       "https://github.com/BODHEESH",
@@ -50,6 +62,7 @@
   </script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -59,9 +72,10 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#expertise">Expertise</a></li>
-          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#leading">Leading</a></li>
           <li><a href="#creator">Bodhi Tech Talks</a></li>
           <li><a href="#beyond">Beyond</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -73,19 +87,22 @@
   <main id="main">
 
     <!-- Hero -->
-    <section class="hero" id="top">
+    <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="wrap">
-        <p class="hero-role">Senior Engineer at Ahana Systems, Bengaluru</p>
-        <h1 class="name">Bodheesh<br>VC</h1>
+        <p class="hero-role reveal">Senior Engineer and engineering lead, Ahana Systems and Solutions, Bengaluru</p>
+        <h1 class="name" id="hero-title">Bodheesh<br>VC</h1>
 
         <div class="hero-body">
-          <p class="position">I build backend systems, and I lead the engineers who run them.</p>
-          <div>
-            <p class="intro">I lead software and application-support teams and build Node.js microservices. I came to software from factory floors and quality inspection, and I still think about systems the same way: what happens at the handoffs, and what happens when something stops.</p>
+          <p class="position reveal">I lead engineering teams and build the Node.js backend systems they ship.</p>
+          <div class="reveal" style="--d:.15s">
+            <p class="intro">I lead more than 15 engineers across several teams at Ahana Systems and Solutions, covering software development and application support. I came to software from factory floors and quality inspection, and I still think about systems the same way: what happens at the handoffs, and what happens when something stops.</p>
             <div class="hero-links">
-              <a href="https://www.linkedin.com/in/bodheeshvc/">LinkedIn</a>
-              <a href="https://github.com/BODHEESH">GitHub</a>
-              <a href="mailto:bodheeshvc.developer@gmail.com">Email</a>
+              <a class="sweep" href="mailto:bodheeshvc.developer@gmail.com">Email</a>
+              <a class="sweep" href="https://www.linkedin.com/in/bodheeshvc/">LinkedIn</a>
+              <a class="sweep" href="https://github.com/BODHEESH">GitHub</a>
+              <a class="sweep" href="https://www.youtube.com/@BodhiTechTalks">YouTube</a>
+              <a class="sweep" href="https://bodheesh.hashnode.dev/">Hashnode</a>
+              <a class="sweep" href="https://www.npmjs.com/settings/bodheesh/packages">npm</a>
             </div>
           </div>
         </div>
@@ -93,7 +110,7 @@
         <div class="rail-wrap">
           <svg class="rail" viewBox="0 0 1000 200" role="img" aria-labelledby="rail-title rail-desc">
             <title id="rail-title">Career path, in four stations</title>
-            <desc id="rail-desc">Industrial and quality engineering from 2016 to 2021. Full-stack training in 2021. Backend development from 2022 to 2024. Backend engineering and team lead at Ahana Systems from 2024 onward.</desc>
+            <desc id="rail-desc">Industrial and quality engineering from 2016 to 2021. Full-stack training in 2021. Backend development from 2022 to 2024. Backend engineering, and then engineering lead of more than 15 engineers at Ahana Systems from 2024 onward.</desc>
             <line class="rail-path" x1="60" y1="100" x2="940" y2="100"></line>
 
             <text class="rail-year" x="110" y="52" text-anchor="middle">2016–2021</text>
@@ -113,15 +130,15 @@
 
             <text class="rail-year" x="890" y="52" text-anchor="middle">2024–now</text>
             <circle class="rail-station now" cx="890" cy="100" r="12"></circle>
-            <text class="rail-text" x="890" y="140" text-anchor="middle">Backend engineer,</text>
-            <text class="rail-text" x="890" y="164" text-anchor="middle">then team lead at Ahana</text>
+            <text class="rail-text" x="890" y="140" text-anchor="middle">Backend engineer, then</text>
+            <text class="rail-text" x="890" y="164" text-anchor="middle">engineering lead, 15+ people</text>
           </svg>
 
           <ol class="rail-list">
             <li><strong>2016–2021</strong><span>Industrial and quality engineering</span></li>
             <li><strong>2021</strong><span>Career change: full-stack training (MERN)</span></li>
             <li><strong>2022–2024</strong><span>Backend developer on REST APIs and microservices</span></li>
-            <li><strong>2024–now</strong><span>Backend engineer, then team lead at Ahana Systems</span></li>
+            <li><strong>2024–now</strong><span>Backend engineer, then engineering lead of 15+ people at Ahana Systems</span></li>
           </ol>
         </div>
       </div>
@@ -130,11 +147,11 @@
     <!-- About -->
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="wrap section-grid">
-        <h2 class="section-label" id="about-title">About</h2>
-        <div class="prose">
+        <h2 class="section-label reveal" id="about-title">About</h2>
+        <div class="prose reveal">
           <p>I started my working life in industrial engineering and quality roles, at companies including Hyundai Motor India and Kitex Garments. In 2021 I changed careers. I spent six months, often 16 to 17 hours a day, learning the MERN stack and building projects, including an e-commerce platform and a learning management system.</p>
           <p>Since then I have worked on REST APIs, microservices and real-time systems, first as a freelancer and then at Nile Technologies and Ahana Systems. Most of my work is the part users never notice: making services reliable, queries faster and releases uneventful.</p>
-          <p>Since late 2024 I have also been responsible for people. At Ahana I lead software and application-support teams, plan sprints, review performance, run technical interviews and work through production incidents with the team. I am currently leading three or four projects at once.</p>
+          <p>Since late 2024 I have also been responsible for people. At Ahana I lead more than 15 engineers across several teams in software development and application support. I plan sprints, review performance, mentor engineers, run technical interviews and work through production incidents with the teams. I am currently leading three or four projects at once.</p>
           <p>Outside work I build small developer tools and publish them on npm, write on the Bodhi Tech blog, teach on YouTube, and run Bodhi Learning, an educational institution in Thrissur, Kerala, which has mentored more than 200 students.</p>
         </div>
       </div>
@@ -143,18 +160,19 @@
     <!-- Experience -->
     <section class="section" id="experience" aria-labelledby="experience-title">
       <div class="wrap section-grid">
-        <h2 class="section-label" id="experience-title">Experience</h2>
+        <h2 class="section-label reveal" id="experience-title">Experience</h2>
         <div>
           <ol class="timeline">
-            <li class="current">
+            <li class="current reveal">
               <div class="when">Jul 2026 – now</div>
               <div class="role">
-                <h3>Senior Engineer, Automation and Application Development</h3>
+                <h3>Senior Engineer and Engineering Lead, Automation and Application Development</h3>
                 <p class="org">Ahana Systems and Solutions, Bengaluru (hybrid)</p>
                 <ul>
-                  <li>Lead engineering teams for software development and application support, owning planning, delivery and quality across three or four concurrent projects.</li>
+                  <li>Lead more than 15 engineers across several teams in software development and application support, owning planning, delivery and quality across three or four concurrent projects.</li>
                   <li>Set goals, review performance, mentor engineers and run technical interviews.</li>
                   <li>Define architecture and technical direction for Node.js microservices products and automation solutions.</li>
+                  <li>Coordinate sprints and release readiness with product, QA and DevOps colleagues.</li>
                   <li>Oversee production support: incident triage, root-cause analysis and resolution.</li>
                   <li>Drive engineering standards through code reviews, CI/CD pipelines and monitoring with Docker, GitHub Actions, Prometheus, Grafana and SonarQube.</li>
                   <li>Promoted to Senior Engineer in July 2026. Supported team growth through more than 25 technical interviews and new-engineer onboarding.</li>
@@ -162,7 +180,7 @@
               </div>
             </li>
 
-            <li>
+            <li class="reveal" style="--d:.08s">
               <div class="when">Nov 2024 – Jul 2026</div>
               <div class="role">
                 <h3>Software Engineer</h3>
@@ -176,7 +194,7 @@
               </div>
             </li>
 
-            <li>
+            <li class="reveal" style="--d:.12s">
               <div class="when">Jul – Nov 2024</div>
               <div class="role">
                 <h3>Backend Developer, freelance</h3>
@@ -185,11 +203,12 @@
                   <li>Enhanced core features of the Vymo sales platform, improving sales workflows and team productivity by 40 percent through backend optimization and workflow automation.</li>
                   <li>Cut complex database query execution time by 50 percent.</li>
                   <li>Built REST APIs and microservices, with Apache Kafka for event streaming and Elasticsearch for search.</li>
+                  <li>Monitored production with Prometheus and Grafana, and maintained codebases in GitLab and Bitbucket.</li>
                 </ul>
               </div>
             </li>
 
-            <li>
+            <li class="reveal" style="--d:.16s">
               <div class="when">Feb 2023 – Jun 2024</div>
               <div class="role">
                 <h3>Backend Developer</h3>
@@ -197,12 +216,12 @@
                 <ul>
                   <li>Built backend components for Kinengo, a modular super app on MVC architecture. Reported outcomes: 25 percent higher user engagement and 40 percent more overall app usage.</li>
                   <li>Designed REST APIs with role-based authorization using JWT, and integrated payment gateways.</li>
-                  <li>Implemented MySQL and MongoDB schemas, and supported production deployments on AWS.</li>
+                  <li>Implemented MySQL and MongoDB schemas, and supported production deployments on AWS (S3, EC2) with Nginx load balancing.</li>
                 </ul>
               </div>
             </li>
 
-            <li>
+            <li class="reveal" style="--d:.2s">
               <div class="when">Nov 2022 – Feb 2023</div>
               <div class="role">
                 <h3>Full Stack Engineer, freelance</h3>
@@ -214,7 +233,7 @@
             </li>
           </ol>
 
-          <div class="earlier">
+          <div class="earlier reveal">
             <h3 class="earlier-title">Earlier</h3>
             <dl class="facts-list">
               <dt>2022</dt>
@@ -224,20 +243,41 @@
               <dt>2018 – now</dt>
               <dd>Founder of Bodhi Learning, an educational institution in Thrissur, Kerala.</dd>
               <dt>2016–2021</dt>
-              <dd>Industrial, quality and service roles at KADCO Systems, Hyundai Motor India, Kitex Garments and SSRAC.</dd>
+              <dd>Service engineer and regional manager at KADCO Systems. Quality assurance specialist at Hyundai Motor India. Industrial engineer at Kitex Garments. Senior industrial engineer at SSRAC.</dd>
             </dl>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Education -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="wrap section-grid">
+        <h2 class="section-label reveal" id="education-title">Education</h2>
+        <ul class="education reveal">
+          <li>
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <p>Indira Gandhi National Open University (IGNOU) · 2024 to present</p>
+          </li>
+          <li>
+            <h3>Diploma in Mechanical Engineering</h3>
+            <p>Maharajas Technological Institute, Thrissur, Kerala · 2013 to 2016 · CGPA 8.34 out of 10</p>
+          </li>
+          <li>
+            <h3>Higher Secondary</h3>
+            <p>Government HSS Mullassery, Thrissur, Kerala · 2011 to 2013 · 80 percent</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Projects -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="wrap section-grid">
-        <h2 class="section-label" id="projects-title">Selected projects</h2>
+        <h2 class="section-label reveal" id="projects-title">Selected projects</h2>
         <div>
 
-          <article class="project">
+          <article class="project reveal">
             <h3>Laser-cutting management system</h3>
             <p class="lead">A modular system for managing laser-cutting work, built as microservices with a micro-frontend, so each module can be deployed on its own.</p>
             <dl class="facts">
@@ -250,12 +290,12 @@
             </dl>
           </article>
 
-          <article class="project">
+          <article class="project reveal">
             <h3>Kinengo modular super app</h3>
             <p class="lead">A single application made of standalone business modules, built on MVC architecture.</p>
             <dl class="facts">
               <dt>My role</dt>
-              <dd>Backend developer. Built components for large-scale business workflows and secure REST APIs.</dd>
+              <dd>Backend developer. Built components for large-scale business workflows and secure REST APIs with role-based authorization.</dd>
               <dt>Stack</dt>
               <dd>Node.js, Express, MySQL, MongoDB, JWT, payment gateways, AWS (S3, EC2) with Nginx.</dd>
               <dt>Reported outcome</dt>
@@ -263,7 +303,7 @@
             </dl>
           </article>
 
-          <article class="project">
+          <article class="project reveal">
             <h3>Ahana business microservices</h3>
             <p class="lead">Business-critical services for production, orders, invoicing and material management, used by the Ahana platform.</p>
             <dl class="facts">
@@ -274,7 +314,12 @@
             </dl>
           </article>
 
-          <article class="project">
+          <article class="project reveal">
+            <h3>AI-powered desktop application</h3>
+            <p class="lead">An AI-powered desktop application built with Electron.js and full-stack integration, developed at Ahana Systems.</p>
+          </article>
+
+          <article class="project reveal">
             <h3>Open-source developer tools</h3>
             <p class="lead">Eight packages published on npm, with more than 3,000 downloads in total. Each one is a small tool for a problem I kept hitting in backend work.</p>
             <ul class="packages">
@@ -289,6 +334,16 @@
             </ul>
           </article>
 
+          <article class="project reveal">
+            <h3>Amakart and a learning management system</h3>
+            <p class="lead">Two full-stack projects from my MERN training at Brototype in 2021. Amakart is an e-commerce platform with authentication, cart, orders, payment gateway integration and an admin dashboard. The learning management system handles courses, users, progress tracking, live classes and quizzes.</p>
+          </article>
+
+          <article class="project reveal">
+            <h3>Bodhi Learn</h3>
+            <p class="lead">The website for Bodhi Learning, the educational institution I founded in Thrissur. <a href="https://bodhilearn.com">bodhilearn.com</a></p>
+          </article>
+
         </div>
       </div>
     </section>
@@ -296,104 +351,140 @@
     <!-- Expertise -->
     <section class="section" id="expertise" aria-labelledby="expertise-title">
       <div class="wrap section-grid">
-        <h2 class="section-label" id="expertise-title">Expertise</h2>
+        <h2 class="section-label reveal" id="expertise-title">Expertise</h2>
         <dl class="skills">
-          <div>
+          <div class="reveal">
             <dt>Backend</dt>
             <dd>
               <p>Node.js and Express services with JWT authentication, role-based authorization and Socket.IO for real-time features.</p>
               <p class="items">Node.js, Express.js, REST APIs, JWT, Socket.IO</p>
             </dd>
           </div>
-          <div>
+          <div class="reveal">
             <dt>Data</dt>
             <dd>
               <p>Schema design and query tuning across MongoDB and MySQL, with Redis caching where reads repeat.</p>
               <p class="items">MongoDB, MySQL, PostgreSQL, Redis, Elasticsearch, Firebase</p>
             </dd>
           </div>
-          <div>
+          <div class="reveal">
             <dt>Architecture and messaging</dt>
             <dd>
               <p>Microservices and micro-frontends, with Kafka for event streams between services.</p>
               <p class="items">Microservices, micro-frontend, Apache Kafka, RabbitMQ, API design</p>
             </dd>
           </div>
-          <div>
+          <div class="reveal">
             <dt>Frontend</dt>
             <dd>
               <p>React applications with Redux Toolkit or Zustand for state, and TypeScript where the codebase allows it.</p>
               <p class="items">React.js, Next.js, TypeScript, Redux Toolkit, Zustand, Tailwind CSS, Material UI</p>
             </dd>
           </div>
-          <div>
+          <div class="reveal">
             <dt>Cloud and delivery</dt>
             <dd>
               <p>Containerized deployments on AWS, with CI/CD pipelines that run on every change.</p>
               <p class="items">AWS (EC2, S3, Route 53, IAM), Docker, GitHub Actions, Nginx, Google Cloud</p>
             </dd>
           </div>
-          <div>
+          <div class="reveal">
             <dt>Quality and operations</dt>
             <dd>
               <p>Code review and static analysis as routine, and monitoring for live systems, with production incident triage.</p>
               <p class="items">SonarQube, Jest, Mocha and Chai, ESLint, Prometheus, Grafana</p>
             </dd>
           </div>
-          <div>
+          <div class="reveal">
             <dt>AI and automation</dt>
             <dd>
               <p>AI-assisted developer tooling, an AI-powered Electron desktop application, and automation workflows for engineering tasks.</p>
               <p class="items">OpenAI, Electron, CLI tooling, GitHub automation</p>
             </dd>
           </div>
+          <div class="reveal">
+            <dt>Ways of working</dt>
+            <dd>
+              <p>Agile delivery, sprint planning, mentoring engineers, technical interviews, and coordination with product, QA and DevOps.</p>
+            </dd>
+          </div>
         </dl>
       </div>
     </section>
 
-    <!-- Leadership -->
-    <section class="section" id="leadership" aria-labelledby="leadership-title">
+    <!-- Leading -->
+    <section class="section" id="leading" aria-labelledby="leading-title">
       <div class="wrap section-grid">
-        <h2 class="section-label" id="leadership-title">Leadership</h2>
-        <ol class="principles" style="list-style:none">
-          <li>
-            <h3>Production support is part of the job</h3>
-            <p>I stay close to live systems. Incident triage and root-cause analysis are work I do with the team, and the goal is a fix that changes the system, not only the symptom.</p>
-          </li>
-          <li>
-            <h3>Standards live in the pipeline</h3>
-            <p>Code review, SonarQube and CI/CD carry the standards, so quality does not depend on who happens to be watching.</p>
-          </li>
-          <li>
-            <h3>People grow with real ownership</h3>
-            <p>I set goals, review performance and mentor engineers. I hand people a delivery early enough for it to stretch them. I have run more than 25 technical interviews and helped onboard new engineers.</p>
-          </li>
-          <li>
-            <h3>Plan for the handoffs</h3>
-            <p>Much of the risk in a delivery sits between teams: product, QA and DevOps. I coordinate those handoffs deliberately, from sprint planning through release readiness.</p>
-          </li>
-        </ol>
+        <h2 class="section-label reveal" id="leading-title">Leading</h2>
+        <div>
+          <div class="stats reveal" aria-label="Key numbers">
+            <div class="stat">
+              <span class="stat-num" data-count="15" data-suffix="+">15+</span>
+              <span class="stat-label">engineers led across several teams</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="25" data-suffix="+">25+</span>
+              <span class="stat-label">technical interviews run</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="200" data-suffix="+">200+</span>
+              <span class="stat-label">students mentored through Bodhi Learning</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="3000" data-suffix="+">3,000+</span>
+              <span class="stat-label">npm downloads across eight packages</span>
+            </div>
+          </div>
+
+          <ol class="principles">
+            <li class="reveal">
+              <h3>Production support is part of the job</h3>
+              <p>I stay close to live systems. Incident triage and root-cause analysis are work I do with the teams, and the goal is a fix that changes the system, not only the symptom.</p>
+            </li>
+            <li class="reveal">
+              <h3>Standards live in the pipeline</h3>
+              <p>Code review, SonarQube and CI/CD carry the standards, so quality does not depend on who happens to be watching.</p>
+            </li>
+            <li class="reveal">
+              <h3>People grow with real ownership</h3>
+              <p>I set goals, review performance and mentor engineers. I hand people a delivery early enough for it to stretch them, and I help onboard new engineers.</p>
+            </li>
+            <li class="reveal">
+              <h3>Plan for the handoffs</h3>
+              <p>Much of the risk in a delivery sits between teams: product, QA and DevOps. I coordinate those handoffs deliberately, from sprint planning through release readiness.</p>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
     <!-- Creator -->
     <section class="section creator" id="creator" aria-labelledby="creator-title">
       <div class="wrap section-grid">
-        <h2 class="section-label" id="creator-title">Bodhi Tech Talks</h2>
-        <div class="prose">
-          <p>A YouTube channel where I explain technology, AI tools and practical workflows, with content in Malayalam.</p>
-          <p>I write the same way I build: explain what a tool does in practice, then what to watch out for. The Bodhi Tech blog on Hashnode has 38 posts, including interview guides for senior backend developers.</p>
+        <h2 class="section-label reveal" id="creator-title">Bodhi Tech Talks</h2>
+        <div class="creator-body">
+          <div class="prose reveal">
+            <p>A YouTube channel where I explain technology, AI tools and practical workflows, with content in Malayalam.</p>
+            <p>I write the same way I build: explain what a tool does in practice, then what to watch out for. The Bodhi Tech blog on Hashnode has 38 posts, including interview guides for senior backend developers.</p>
 
-          <ul class="creator-links">
-            <li><a href="https://www.youtube.com/@BodhiTechTalks">Watch on YouTube</a></li>
-            <li><a href="https://bodheesh.hashnode.dev/">Read on Hashnode</a></li>
-          </ul>
+            <ul class="creator-links">
+              <li><a class="sweep" href="https://www.youtube.com/@BodhiTechTalks">Watch on YouTube</a></li>
+              <li><a class="sweep" href="https://bodheesh.hashnode.dev/">Read on Hashnode</a></li>
+            </ul>
 
-          <ol class="posts" style="padding-left:0">
-            <li><time datetime="2025-10">Oct 2025</time><a href="https://bodheesh.hashnode.dev/">Microservices Architecture: 100 Interview Questions and Answers for Senior Backend Developers</a></li>
-            <li><time datetime="2025-09">Sep 2025</time><a href="https://bodheesh.hashnode.dev/">The Ultimate React Interview Guide: 30 Essential Questions</a></li>
-            <li><time datetime="2025-07">Jul 2025</time><a href="https://bodheesh.hashnode.dev/">React State Management Showdown: Redux, Redux Toolkit, Context API, Zustand and Jotai</a></li>
-          </ol>
+            <ol class="posts">
+              <li><time datetime="2025-10">Oct 2025</time><a href="https://bodheesh.hashnode.dev/">Microservices Architecture: 100 Interview Questions and Answers for Senior Backend Developers</a></li>
+              <li><time datetime="2025-09">Sep 2025</time><a href="https://bodheesh.hashnode.dev/">The Ultimate React Interview Guide: 30 Essential Questions</a></li>
+              <li><time datetime="2025-07">Jul 2025</time><a href="https://bodheesh.hashnode.dev/">React State Management Showdown: Redux, Redux Toolkit, Context API, Zustand and Jotai</a></li>
+            </ol>
+          </div>
+          <figure class="creator-photo reveal">
+            <img src="Images/Bodheesh-480.jpg"
+                 srcset="Images/Bodheesh-480.jpg 480w, Images/Bodheesh-800.jpg 800w"
+                 sizes="(max-width: 760px) 70vw, 260px"
+                 width="800" height="1000" loading="lazy"
+                 alt="Bodheesh VC at a desk with a microphone, talking to the camera in a studio.">
+          </figure>
         </div>
       </div>
     </section>
@@ -401,21 +492,21 @@
     <!-- Beyond engineering -->
     <section class="section" id="beyond" aria-labelledby="beyond-title">
       <div class="wrap section-grid">
-        <h2 class="section-label" id="beyond-title">Beyond engineering</h2>
+        <h2 class="section-label reveal" id="beyond-title">Beyond engineering</h2>
         <div class="beyond">
-          <div>
+          <div class="reveal">
             <h3>Product building</h3>
             <p>I build small developer tools and publish them on npm, then keep them maintained. A package nobody can install is only a repository.</p>
           </div>
-          <div>
+          <div class="reveal" style="--d:.08s">
             <h3>AI experiments</h3>
             <p>I have built an AI-assisted commit message generator and an AI-powered Electron desktop application. I am interested in where AI saves real time in daily engineering work, and where it does not.</p>
           </div>
-          <div>
+          <div class="reveal" style="--d:.12s">
             <h3>Educational technology</h3>
             <p>Alongside engineering work I teach. Through Bodhi Learning I have mentored more than 200 students. My bootcamp project was a learning management system with courses, progress tracking, live classes and quizzes.</p>
           </div>
-          <div>
+          <div class="reveal" style="--d:.16s">
             <h3>Sharing knowledge</h3>
             <p>I speak at local developer meetups on Node.js and the MERN stack, and I publish interview guides and tutorials on YouTube and Hashnode.</p>
           </div>
@@ -426,17 +517,17 @@
     <!-- Contact -->
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="wrap section-grid">
-        <h2 class="section-label" id="contact-title">Contact</h2>
+        <h2 class="section-label reveal" id="contact-title">Contact</h2>
         <div>
-          <p class="contact-line">Email is the quickest way to reach me.</p>
-          <a class="contact-mail" href="mailto:bodheeshvc.developer@gmail.com">bodheeshvc.developer@gmail.com</a>
+          <p class="contact-line reveal">Email is the quickest way to reach me.</p>
+          <a class="contact-mail reveal sweep" href="mailto:bodheeshvc.developer@gmail.com">bodheeshvc.developer@gmail.com</a>
           <ul class="contact-links">
-            <li><a href="https://www.linkedin.com/in/bodheeshvc/">LinkedIn</a></li>
-            <li><a href="https://github.com/BODHEESH">GitHub</a></li>
-            <li><a href="https://www.youtube.com/@BodhiTechTalks">YouTube</a></li>
-            <li><a href="https://bodheesh.hashnode.dev/">Hashnode</a></li>
-            <li><a href="https://www.npmjs.com/settings/bodheesh/packages">npm</a></li>
-            <li><a href="https://bodhilearn.com">Bodhi Learn</a></li>
+            <li><a class="sweep" href="https://www.linkedin.com/in/bodheeshvc/">LinkedIn</a></li>
+            <li><a class="sweep" href="https://github.com/BODHEESH">GitHub</a></li>
+            <li><a class="sweep" href="https://www.youtube.com/@BodhiTechTalks">YouTube</a></li>
+            <li><a class="sweep" href="https://bodheesh.hashnode.dev/">Hashnode</a></li>
+            <li><a class="sweep" href="https://www.npmjs.com/settings/bodheesh/packages">npm</a></li>
+            <li><a class="sweep" href="https://bodhilearn.com">Bodhi Learn</a></li>
           </ul>
         </div>
       </div>
@@ -447,7 +538,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <span>Bodheesh VC, Bengaluru</span>
-      <span>Built with plain HTML, CSS and JavaScript. © <span id="year">2026</span></span>
+      <span>© <span id="year">2026</span> · Built with plain HTML, CSS and JavaScript</span>
     </div>
   </footer>
 

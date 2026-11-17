@@ -825,3 +825,159 @@ svg {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------- v3 additions: motion, stats, education, creator photo ---------- */
+
+/* Reading progress along the top edge */
+.scroll-progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: var(--signal);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 30;
+}
+
+/* Sections and items rise in as they enter the viewport.
+   Only applied when JavaScript is running, so content stays visible without it. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s),
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s);
+}
+
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Link underline that draws in on hover */
+.sweep {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.45s ease;
+}
+
+.sweep:hover {
+  background-size: 100% 1px;
+}
+
+/* Key numbers */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1.75rem 2rem;
+  margin: 0 0 2.75rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.stat-num {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Education */
+.education {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 44rem;
+}
+
+.education li {
+  padding-block: 1.1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.education li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.education h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.education p {
+  margin: 0.3rem 0 0;
+  color: var(--ink-2);
+}
+
+/* Creator: text and photo side by side on the dark panel */
+.creator-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.creator-photo {
+  margin: 0;
+}
+
+.creator-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+@media (max-width: 760px) {
+  .creator-body {
+    grid-template-columns: 1fr;
+  }
+
+  .creator-photo {
+    max-width: 240px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Reduced motion: show everything at once, no transitions */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .scroll-progress,
+  .sweep {
+    transition: none;
+  }
+}
+
+@media print {
+  .scroll-progress,
+  .site-header {
+    display: none;
+  }
+}
