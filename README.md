@@ -7,6 +7,7 @@ A static personal site: HTML, CSS and a small script. No build step and no depen
 - `index.html`: all content, plus metadata (Open Graph, Twitter cards, JSON-LD Person schema)
 - `styles.css`: the design system (palette, type, layout, motion, print and reduced-motion rules)
 - `script.js`: reveal-on-scroll, reading progress, counting numbers, active-section nav
+- `Certificates/`: PDF certificates for completed courses, linked from the Certificates section of `index.html`. Add a new PDF here and a matching link there.
 - `Images/Bodheesh-800.jpg`, `Images/Bodheesh-480.jpg`: web-sized 4:5 crops of your photo. Your original `Images/Bodheesh.jpeg` is kept unchanged.
 - `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `site.webmanifest`: icons
 - `og-image.png`: 1200 x 630 social preview

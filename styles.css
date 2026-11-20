@@ -927,6 +927,61 @@ svg {
   color: var(--ink-2);
 }
 
+/* Certificates: grouped links to the PDFs */
+.certs-intro {
+  margin: 0 0 1.75rem;
+  max-width: 44rem;
+  color: var(--ink-2);
+}
+
+.cert-group + .cert-group {
+  margin-top: 2.25rem;
+}
+
+.cert-group h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+.certs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+.certs li {
+  padding-block: 0.6rem;
+  border-top: 1px solid var(--rule);
+}
+
+.certs a {
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.4;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+}
+
+.certs a:hover,
+.certs a:focus-visible {
+  background-size: 100% 1.5px;
+}
+
+@media (max-width: 760px) {
+  .certs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* Creator: text and photo side by side on the dark panel */
 .creator-body {
   display: grid;
@@ -979,6 +1034,93 @@ svg {
   .scroll-progress,
   .site-header {
     display: none;
+  }
+}
+
+/* Certificate modal */
+.cert-modal {
+  inset: 0;
+  margin: 1rem auto auto;
+  width: min(1140px, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.cert-modal::backdrop {
+  background: rgba(26, 28, 30, 0.7);
+}
+
+.cert-modal-inner {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 2rem);
+}
+
+.cert-modal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cert-modal-title {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.cert-modal-close {
+  flex: none;
+  font: inherit;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--ink);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.cert-modal-close:hover,
+.cert-modal-close:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.cert-modal-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 0.75rem;
+  background: var(--ink);
+}
+
+.cert-modal-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+@media (max-width: 760px) {
+  .cert-modal {
+    width: calc(100vw - 2rem);
   }
 }
 

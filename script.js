@@ -240,3 +240,52 @@
     });
   }
 })();
+
+// Certificates: open each PDF in a modal viewer instead of a new tab.
+// The PDF toolbar is hidden with a URL fragment. Without <dialog> support,
+// the links keep their normal href and open in the same tab.
+(function () {
+  var modal = document.getElementById("certModal");
+  if (!modal || typeof modal.showModal !== "function") return;
+
+  var img = modal.querySelector(".cert-modal-img");
+
+  // Discourage casual saving: no right-click menu or drag on the preview
+  img.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  });
+  img.addEventListener("dragstart", function (event) {
+    event.preventDefault();
+  });
+  var title = modal.querySelector(".cert-modal-title");
+  var closeBtn = modal.querySelector(".cert-modal-close");
+  var opener = null;
+
+  document.querySelectorAll(".certs a[data-image]").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      opener = link;
+      title.textContent = link.textContent.trim();
+      img.alt = "Certificate: " + title.textContent;
+      img.src = link.getAttribute("data-image");
+      modal.showModal();
+      closeBtn.focus();
+    });
+  });
+
+  closeBtn.addEventListener("click", function () {
+    modal.close();
+  });
+
+  // Clicking the dimmed backdrop closes the modal
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) modal.close();
+  });
+
+  // Unload the PDF on close, and return focus to the link that opened it
+  modal.addEventListener("close", function () {
+    img.removeAttribute("src");
+    if (opener) opener.focus();
+    opener = null;
+  });
+})();
