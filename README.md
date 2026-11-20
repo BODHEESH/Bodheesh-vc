@@ -49,7 +49,7 @@ All motion is switched off when the visitor's system asks for reduced motion, an
 - **Title**: the site uses the confirmed title "Sr. Engineer - Automation & Application Development", with the lead role described in the text.
 - **YouTube subscribers**: not shown. The channel page showed 1.59M, which conflicts with your figure.
 - **npm downloads**: "more than 3,000" from your GitHub README. Your resume says "1000+".
-- **Package count**: the GitHub table lists eight packages, but its achievements say nine.
+- **Package count**: the npm registry lists nine packages under the account, including a scoped package.
 - **Downtime reduction of 20%**: on the resume only, so not on the site.
 - **Draft wording**: the hero line, the About account, the "Leading" principles and the "Beyond" paragraphs are my wording from your profile. Check them in your voice.
 - **Phone number**: left off.
